@@ -1,0 +1,60 @@
+<div class="student-dashboard">
+    <h1>Student Management Dashboard</h1>
+    
+    <!-- Search Box -->
+    <div class="search-section">
+        <h3>Filter Students</h3>
+        <input 
+            type="text" 
+            [(ngModel)]="searchText" 
+            placeholder="Search students by name..."
+            class="search-input"
+        />
+    </div>
+
+    <!-- Students Table -->
+    <div class="table-section">
+        <h3>Student Information</h3>
+        <table class="students-table">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Course</th>
+                    <th>Fee</th>
+                    <th>Joining Date</th>
+                    <th>Score</th>
+                    <th>Grade</th>
+                    <th>Word Count</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let student of (students | filter: searchText)">
+                    <td>{{ student.name | uppercase }}</td>
+                    <td>{{ student.course | capitalize }}</td>
+                    <td>{{ student.fee | currency: 'INR':'symbol':'1.0-0' }}</td>
+                    <td>{{ student.joiningDate | date: 'MMM d, y' }}</td>
+                    <td>{{ student.score }}</td>
+                    <td>{{ student.score | grade }}</td>
+                    <td>{{ student.course | wordCount }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- JSON Data Display -->
+    <div class="json-section">
+        <h3>Raw Student Data (JSON Format)</h3>
+        <pre class="json-display">{{ (students | filter: searchText) | json }}</pre>
+    </div>
+
+    <!-- Slice Pipe Demo -->
+    <div class="slice-section">
+        <h3>Slice Pipe Demo</h3>
+        <p><strong>First 2 Students:</strong></p>
+        <ul>
+            <li *ngFor="let student of (students | slice: 0: 2)">
+                {{ student.name | capitalize }} - {{ student.course | capitalize }}
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,202 @@
+.student-dashboard {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1 {
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.5rem;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+h3 {
+  color: #34495e;
+  margin-bottom: 15px;
+  border-bottom: 3px solid #3498db;
+  padding-bottom: 5px;
+}
+
+/* Search Section */
+.search-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+
+.search-section h3 {
+  color: white;
+  border-bottom: 3px solid rgba(255,255,255,0.3);
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 25px;
+  font-size: 16px;
+  outline: none;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(0,0,0,0.15);
+}
+
+/* Table Section */
+.table-section {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  overflow-x: auto;
+}
+
+.students-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+.students-table th {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 15px 12px;
+  text-align: left;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+}
+
+.students-table th:first-child {
+  border-top-left-radius: 8px;
+}
+
+.students-table th:last-child {
+  border-top-right-radius: 8px;
+}
+
+.students-table td {
+  padding: 15px 12px;
+  border-bottom: 1px solid #ecf0f1;
+  transition: background-color 0.3s ease;
+}
+
+.students-table tr:hover {
+  background: linear-gradient(135deg, #667eea20 0%, #764ba220 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.students-table tr:nth-child(even) {
+  background-color: #f8f9fa;
+}
+
+/* JSON Section */
+.json-section {
+  background: #2c3e50;
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 30px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+
+.json-section h3 {
+  color: white;
+  border-bottom: 3px solid #3498db;
+}
+
+.json-display {
+  background: #34495e;
+  color: #2ecc71;
+  padding: 20px;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 0;
+  box-shadow: inset 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Slice Section */
+.slice-section {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px;
+  padding: 20px;
+  color: white;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+}
+
+.slice-section h3 {
+  color: white;
+  border-bottom: 3px solid rgba(255,255,255,0.3);
+}
+
+.slice-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.slice-section li {
+  background: rgba(255,255,255,0.1);
+  margin: 10px 0;
+  padding: 12px 15px;
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.slice-section li:hover {
+  background: rgba(255,255,255,0.2);
+  transform: translateX(10px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .student-dashboard {
+    padding: 10px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .students-table {
+    font-size: 14px;
+  }
+  
+  .students-table th,
+  .students-table td {
+    padding: 10px 8px;
+  }
+}
+
+/* Animation for smooth loading */
+.student-dashboard > * {
+  animation: fadeInUp 0.6s ease forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.student-dashboard > *:nth-child(1) { animation-delay: 0.1s; }
+.student-dashboard > *:nth-child(2) { animation-delay: 0.2s; }
+.student-dashboard > *:nth-child(3) { animation-delay: 0.3s; }
+.student-dashboard > *:nth-child(4) { animation-delay: 0.4s; }
+.student-dashboard > *:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
